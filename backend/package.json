@@ -1,0 +1,46 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ighor-next/challenge.git",
+  "author": "garciamendes <garciaprog0101@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run --dir src/useCases",
+    "test:watch": "vitest --dir src/useCases",
+    "prisma:migrate:reset": "npx prisma migrate reset",
+    "prisma:migrate:dev": "npx prisma migrate dev",
+    "prisma:migrate:deploy": "npx prisma migrate deploy",
+    "prisma:tasks-default": "npx prisma db seed",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "dev": "tsx watch src/server.ts",
+    "build": "yarn && tsup src --out-dir build && npx prisma migrate deploy && npx prisma db seed",
+    "start": "node build/server.js"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/cors": "^10.0.2",
+    "@fastify/jwt": "^9.0.3",
+    "@prisma/client": "6.3.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "lint-staged": "15.4.3",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.4.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^22.12.0",
+    "eslint": "^9.19.0",
+    "eslint-config-universe": "^14.0.0",
+    "prettier": "^3.4.2",
+    "prisma": "^6.3.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4"
+  }
+}
